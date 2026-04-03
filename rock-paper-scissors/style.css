@@ -1,0 +1,277 @@
+:root {
+  --bg-color: #f9fafb; /* light gray background */
+  --card-color: #ffffff; /* panels/cards */
+  --text-color: #111827; /* dark text */
+  --accent-color: #4f46e5; /* main accent (indigo) */
+
+  --border-color: #e5e7eb;
+  --icon-color: #fff;
+  --active-color: #000;
+}
+
+.dark {
+  --bg-color: #0f172a; /* deep navy */
+  --card-color: #1e293b; /* dark panel */
+  --text-color: #f1f5f9; /*soft white*/
+  /* --go-text:#000 */
+  --accent-color: #818cf8; /* lighter indigo */
+
+  --border-color: #334155;
+  /* --icon-color: #ddd; */
+  --active-color: #1e293b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.2s;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.6rem;
+  color: var(--text-color);
+  font-weight: 400;
+  line-height: 1.6;
+  background: var(--bg-color);
+  position: relative;
+  height: 100vh;
+}
+
+.container {
+  background: var(--bg-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1.6rem 4rem;
+  border-radius: 2rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 40rem;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  height: contain;
+  border: 1px solid var(--border-color);
+  /* width: 70%; */
+  position: relative;
+}
+
+h1 {
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hidden {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.day {
+  height: 3rem;
+  width: 3rem;
+  position: absolute;
+  top: 1rem;
+  right: 3rem;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.day .moon {
+  height: inherit;
+  width: inherit;
+}
+
+/* Not visible in html but applyied when javascript handles the click state of the moon icon */
+.day .sun {
+  height: inherit;
+  width: inherit;
+}
+
+.icon {
+  height: 3rem;
+  width: 3rem;
+}
+/* Applies to highlight the clicked button , click state handled by Javascript */
+.active {
+  background-color: var(--active-color) !important;
+  color: var(--bg-color) !important;
+}
+
+.score-board {
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+}
+
+.score {
+  background-color: var(--card-color);
+  padding: 1rem 1.4rem;
+  border-radius: 1.5rem;
+}
+/* Applies when the winner is declared and called by Javascript */
+.winner {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  padding: 1rem 1.4rem;
+  border-radius: 1.5rem;
+}
+
+.loss {
+  opacity: 0;
+  visibility: hidden;
+}
+/*  */
+.score h3 {
+  font-size: 1.6rem;
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.score-number {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.user-score,
+.computer-score {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.emoji {
+  font-size: inherit;
+  align-self: stretch;
+  display: flex;
+  justify-content: center;
+  margin-left: 3rem;
+}
+
+.choices {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.choice-btn,
+.computer-option,
+.go {
+  color: var(--text-color);
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  border: none;
+  font-size: 3rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: var(--icon-color);
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+
+.go {
+  color: var(--active-color);
+}
+
+.choice-btn:hover,
+.computer-option:hover,
+.go:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.choice-btn:active {
+  transform: scale(0.95);
+}
+
+.emoji img {
+  height: 2.6rem;
+  width: 2.6rem;
+  align-self: center;
+  transition: transform;
+  animation-name: Bounce;
+  animation-duration: 4s;
+  background: none;
+  cursor: pointer;
+}
+
+@keyframes Bounce {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.5);
+  }
+
+  70% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.5);
+  }
+}
+
+.go-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.result {
+  background: var(--bg-color);
+  padding: 1rem;
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.result-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.result-detail {
+  font-size: 1.2rem;
+}
+
+.reset-btn {
+  background: var(--text-color);
+  color: var(--bg-color);
+  font-weight: 600;
+  border: none;
+  padding: 1.5rem 4rem;
+  font-size: 1.6rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0.5rem 1.5rem rgba(102, 126, 234, 0.3);
+}
+
+.reset-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.8rem 2rem rgba(102, 126, 234, 0.4);
+}
+
+.win {
+  height: 100%;
+  width: 100%;
+}

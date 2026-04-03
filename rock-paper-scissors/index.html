@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="index.js"></script>
+  </head>
+  <body>
+    <span class="day">
+      <img class="moon" src="moon.svg" alt="Night" />
+      <img class="sun hidden" src="sunny-outline.svg" alt="Day" />
+    </span>
+    <main class="container">
+      <h1>Rock Paper Scissors</h1>
+
+      <div class="score-board">
+        <div class="score">
+          <h3>Your Score</h3>
+          <div class="user-score">
+            <p class="score-number user-score-number">0</p>
+          </div>
+        </div>
+        <div class="score">
+          <h3>Computer Score</h3>
+          <div class="computer-score">
+            <p class="score-number computer-score-number">0</p>
+            <span class="emoji"></span>
+          </div>
+        </div>
+      </div>
+      <div class="computer-board">
+        <div class="score">
+          <h3 class="ready">Rock,Paper,Scissors...</h3>
+          <button class="computer-option" title="Scissors">✂️</button>
+        </div>
+      </div>
+
+      <div class="choices">
+        <button class="choice-btn rock" title="Rock">🪨</button>
+        <button class="choice-btn paper" title="Paper">📄</button>
+        <button class="choice-btn scissors" title="Scissors">✂️</button>
+      </div>
+      <div class="go-btn">
+        <button class="go" title="Scissors">Go</button>
+      </div>
+      <div class="result">
+        <div class="result-text">Make your choice</div>
+        <div class="result-detail">
+          Click on Go and choose between rock, paper, or scissors. winner to
+          reach 20 points
+        </div>
+      </div>
+
+      <button class="reset-btn">Reset Game</button>
+    </main>
+  </body>
+</html>
