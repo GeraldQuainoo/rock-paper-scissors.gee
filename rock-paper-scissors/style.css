@@ -110,13 +110,17 @@ h1 {
 /* Applies to highlight the clicked button , click state handled by Javascript */
 .active {
   background-color: var(--active-color) !important;
-  color: var(--bg-color) !important;
+  color: #fff !important;
 }
 
 .score-board {
   display: flex;
   justify-content: space-around;
   gap: 2rem;
+}
+
+.ready {
+  height: 2rem;
 }
 
 .score {

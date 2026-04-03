@@ -10,7 +10,7 @@
     />
     <meta
       property="og:image"
-      content="https://stock.adobe.com/search?k=rock+paper+scissors"
+      content="https://t4.ftcdn.net/jpg/00/84/60/25/240_F_84602505_CbgZtlxEktGN0wfLfTQMuRNvBau4mujo.jpg"
     />
     <meta
       property="og:url"
@@ -20,7 +20,6 @@
     <meta property="og:type" content="website" />
     <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="style.css" />
-    <script defer src="index.js"></script>
   </head>
   <body>
     <span class="day">
@@ -31,14 +30,14 @@
       <h1>Rock Paper Scissors</h1>
 
       <div class="score-board">
-        <div class="score">
-          <h3>Your Score</h3>
+        <div class="score score-u">
+          <h3 class="u-win">Your Score</h3>
           <div class="user-score">
             <p class="score-number user-score-number">0</p>
           </div>
         </div>
-        <div class="score">
-          <h3>Computer Score</h3>
+        <div class="score score-c">
+          <h3 class="c-win">Computer Score</h3>
           <div class="computer-score">
             <p class="score-number computer-score-number">0</p>
             <span class="emoji"></span>
@@ -70,5 +69,6 @@
 
       <button class="reset-btn">Reset Game</button>
     </main>
+    <script defer src="index.js"></script>
   </body>
 </html>
