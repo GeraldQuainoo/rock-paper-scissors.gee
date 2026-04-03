@@ -121,6 +121,7 @@ h1 {
 
 .ready {
   height: 2rem;
+  padding: 0.5rem;
 }
 
 .score {

@@ -101,6 +101,7 @@ const declareWinner = function () {
     disableBtns();
     uWin.textcontent = "You win";
     scoreU.classList.add("active");
+    emoji.textContent = "😒😒";
 
     fadeOutbtns();
     // score.classList.add("winner");
@@ -148,13 +149,17 @@ const check = function () {
     state.computerScore > 4 + state.playerScore
   ) {
     emoji.innerHTML = `<img src='https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTE4a2oxNjhmdTBldW13OG1kOHY4YTl3cGFlNnc2YjUydDNmaDd6dSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/HKoJmvYy3fUqj2Cvrm/giphy.gif'>`;
-    // console.log("😒😒😒😒😒");
   } else if (
     state.playerScore >= 1 &&
-    state.computerScore > 6 + state.playerScore
+    state.computerScore > 2 + state.playerScore
   ) {
     emoji.innerHTML = `<img src='blue-joobi-laugh.gif'>`;
     // console.log("😒😒😒😒😒");
+  } else if (state.playerScore > 4 + state.computerScore) {
+    emoji.innerHTML = `<img src='pains.jpg'>`;
+    // console.log("😒😒😒😒😒");
+  } else if (state.playerScore > 2 + state.computerScore) {
+    emoji.innerHTML = `<img src='scared.jpg'>`;
   }
   declareWinner();
   console.log(state.computerScore, state.playerScore);
