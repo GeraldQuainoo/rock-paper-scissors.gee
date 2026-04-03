@@ -88,7 +88,7 @@ const fadeInbtns = function () {
 };
 
 const declareWinner = function () {
-  if (state.computerScore === 20) {
+  if (state.computerScore === 10) {
     disableBtns();
     go.disabled = true;
     console.log(cWin);
@@ -97,7 +97,7 @@ const declareWinner = function () {
 
     fadeOutbtns();
     // score.classList.add("winner");
-  } else if (state.playerScore === 20) {
+  } else if (state.playerScore === 10) {
     disableBtns();
     uWin.textcontent = "You win";
     scoreU.classList.add("active");
