@@ -112,28 +112,46 @@ console.log(go);
 const check = function () {
   console.log(userAns);
   computerChoice.textContent = ans;
+
+  const userWon = function () {
+    ++state.playerScore;
+    userScoreNumber.textContent = state.playerScore;
+  };
+  const machineWon = function () {
+    ++state.computerScore;
+    computerScoreNumber.textContent = state.computerScore;
+  };
   if (
     userAns[0] === machineAns[0] &&
     typeof userAns[0] === typeof machineAns[0]
   ) {
-    ++state.playerScore;
     userScoreNumber.textContent = state.playerScore;
-  } else if (userAns[0] !== machineAns[0]) {
-    ++state.computerScore;
     computerScoreNumber.textContent = state.computerScore;
+  } else if (userAns[0] === "🪨" && machineAns[0] === "📄") {
+    machineWon();
+  } else if (userAns[0] === "🪨" && machineAns[0] === "✂️") {
+    userWon();
+  } else if (userAns[0] === "📄" && machineAns[0] === "🪨") {
+    userWon();
+  } else if (userAns[0] === "📄" && machineAns[0] === "✂️") {
+    machineWon();
+  } else if (userAns[0] === "✂️" && machineAns[0] === "📄") {
+    userWon();
+  } else if (userAns[0] === "✂️" && machineAns[0] === "🪨") {
+    machineWon();
   }
 
   if (state.playerScore >= 1 && state.computerScore <= 3) {
     emoji.innerHTML = "";
   } else if (
     state.playerScore >= 1 &&
-    state.computerScore > 3 * state.playerScore
+    state.computerScore > 4 + state.playerScore
   ) {
     emoji.innerHTML = `<img src='https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTE4a2oxNjhmdTBldW13OG1kOHY4YTl3cGFlNnc2YjUydDNmaDd6dSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/HKoJmvYy3fUqj2Cvrm/giphy.gif'>`;
     // console.log("😒😒😒😒😒");
   } else if (
     state.playerScore >= 1 &&
-    state.computerScore > 2 * state.playerScore
+    state.computerScore > 6 + state.playerScore
   ) {
     emoji.innerHTML = `<img src='blue-joobi-laugh.gif'>`;
     // console.log("😒😒😒😒😒");
